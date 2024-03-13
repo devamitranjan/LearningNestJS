@@ -88,4 +88,8 @@ export class UserService {
       JWT_SECRET,
     );
   }
+
+  async findById(id: number): Promise<UserEntity> {
+    return this.userRepository.findOne({ where: { id } });
+  }
 }
